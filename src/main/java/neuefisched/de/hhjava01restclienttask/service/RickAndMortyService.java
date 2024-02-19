@@ -1,6 +1,7 @@
 package neuefisched.de.hhjava01restclienttask.service;
 
 
+import neuefisched.de.hhjava01restclienttask.model.RickAndMortyChar;
 import neuefisched.de.hhjava01restclienttask.model.RickAndMortyResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -16,6 +17,13 @@ public class RickAndMortyService {
                 .uri("/character")
                 .retrieve()
                 .body(RickAndMortyResponse.class);
+    }
+
+    public RickAndMortyChar getCharacterById(int id) {
+        return restClient.get()
+                .uri("/character/{id}", id)
+                .retrieve()
+                .body(RickAndMortyChar.class);
     }
 
 }
