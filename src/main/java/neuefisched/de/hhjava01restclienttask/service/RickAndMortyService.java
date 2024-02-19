@@ -34,4 +34,20 @@ public class RickAndMortyService {
                 .retrieve()
                 .body(RickAndMortyResponse.class);
     }
+
+    public int getSpeciesStatistic(String species){
+        RickAndMortyResponse response =  restClient.get()
+                .uri("/character?status=alive&species={species}", species)
+                .retrieve()
+                .body(RickAndMortyResponse.class);
+        if(response == null){
+            return 0;
+        }
+        if(response.getInfo() == null){
+            return 0;
+        }
+        return response.getInfo().getCount();
+    }
+
+
 }

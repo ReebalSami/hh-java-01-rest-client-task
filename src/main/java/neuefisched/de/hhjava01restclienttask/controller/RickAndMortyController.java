@@ -28,4 +28,8 @@ public class RickAndMortyController {
         return service.getCharacterById(id);
     }
 
+    @GetMapping("/species-statistic")
+    public int getSpeciesStatistic(@RequestParam String species) {
+        return service.getSpeciesStatistic(species);
+    }
 }

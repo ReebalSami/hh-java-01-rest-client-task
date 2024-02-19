@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RickAndMortyResponse {
-    private RickAndMortyInfo info;
-    private List<RickAndMortyChar> results;
+public class RickAndMortyInfo {
+        private int count;
+        private int pages;
+        private String next;
+        private String prev;
 }
 
