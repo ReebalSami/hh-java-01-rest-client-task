@@ -1,7 +1,7 @@
-package service;
+package neuefisched.de.hhjava01restclienttask.service;
 
-import model.RickAndMortyChar;
-import model.RickAndMortyResponse;
+
+import neuefisched.de.hhjava01restclienttask.model.RickAndMortyResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -17,7 +17,5 @@ public class RickAndMortyService {
                 .retrieve()
                 .body(RickAndMortyResponse.class);
     }
-
-
 
 }

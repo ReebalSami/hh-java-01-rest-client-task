@@ -1,4 +1,4 @@
-package model;
+package neuefisched.de.hhjava01restclienttask.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
