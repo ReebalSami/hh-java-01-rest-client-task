@@ -5,11 +5,10 @@ import neuefisched.de.hhjava01restclienttask.model.RickAndMortyChar;
 import neuefisched.de.hhjava01restclienttask.model.RickAndMortyResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
-import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class RickAndMortyService {
-    private RestClient restClient = RestClient.builder()
+    private final RestClient restClient = RestClient.builder()
             .baseUrl("https://rickandmortyapi.com/api")
             .build();
 
