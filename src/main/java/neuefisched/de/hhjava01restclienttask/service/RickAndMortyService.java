@@ -5,6 +5,7 @@ import neuefisched.de.hhjava01restclienttask.model.RickAndMortyChar;
 import neuefisched.de.hhjava01restclienttask.model.RickAndMortyResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class RickAndMortyService {
@@ -26,4 +27,11 @@ public class RickAndMortyService {
                 .body(RickAndMortyChar.class);
     }
 
+
+    public RickAndMortyResponse getCharactersByStatus(String status) {
+        return restClient.get()
+                .uri("/character?status={status}", status)
+                .retrieve()
+                .body(RickAndMortyResponse.class);
+    }
 }
